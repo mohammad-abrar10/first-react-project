@@ -4,6 +4,8 @@ import Textform from "./compinents/Textform";
 import React,{useState} from "react";
 import Alert from"./compinents/Alert"
 import Learn from "./compinents/Learn";
+import { BrowserRouter ,Routes,Route,link } from "react-router-dom";
+import Calculator from "./compinents/Calculator";
 
 function App() {
   const[mode,setMode]=useState("light");
@@ -32,9 +34,15 @@ function App() {
   }
   return (
     <>
-    <Navbar title= "textUtills" mode={mode} toggleMode={toggleMode}/>
-    <Alert alert={alert}/>
-    <Textform showAlert={showAlert} mode={mode}/>
+    <BrowserRouter>
+      <Navbar title= "textUtills" mode={mode} toggleMode={toggleMode}/>
+      <Alert alert={alert}/>
+      <Routes>
+        <Route exact path='/' element={<Textform showAlert={showAlert} mode={mode}/>}/>
+        <Route exact path='/calculator' element={<Calculator/>}/>
+      </Routes>
+      
+    </BrowserRouter>
 
     </>
   );

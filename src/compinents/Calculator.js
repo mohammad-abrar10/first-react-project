@@ -75,7 +75,7 @@ export default function Calculator() {
 
 
   return (
-    <div className='container border border-danger rounded bg-warning'>
+    <div className='container border border-danger rounded '>
 
     <h2> calculator</h2>
     <input type='number' className="form-control w-25 form-control form-control-plaintext border border-danger " id="exampleFormControlTextarea1" rows="2"  placeholder='enter your text here' value={number1}  onChange={numberInput}/>
